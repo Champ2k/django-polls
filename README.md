@@ -1,1 +1,2 @@
-# django-polls
+# Django-polls
+by Wikrom Chanthakhun
