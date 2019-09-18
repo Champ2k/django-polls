@@ -15,8 +15,8 @@ by *Wikrom Chanthakhun*
  * Python add-on modules as in [requirements.txt](requirements.txt)
 
  ## How to Run
-First git clone 
->https://github.com/Champ2k/django-polls.git
+First clone the git.
+>git clone https://github.com/Champ2k/django-polls.git
 
 Download the requirement.
 >pip install -r requirements.txt
