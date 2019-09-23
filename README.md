@@ -19,12 +19,17 @@ First clone the git.
 >git clone https://github.com/Champ2k/django-polls.git
 
 Download the requirement.
->pip install -r requirements.txt
+>pip3 install -r requirements.txt
 
 Check all the requirements.
 <br>
 
 Go to /django-polls and run.
-> python manage.py runserver
+> python3 manage.py migrate
+
+> python3 manage.py runserver
 
 in the terminal.
+
+Go to
+>http://localhost:8000/polls
