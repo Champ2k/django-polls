@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
@@ -22,4 +23,14 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+class Vote(models.Model):
+    """A vote by a user for a particular choice in a Question"""
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    # TODO: how to add a uniqueness constraint on database so there
+    # if only one vote per (User,Question) pair.
+
 # Create your models here.
