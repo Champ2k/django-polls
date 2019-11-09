@@ -1,11 +1,12 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from .models import Choice, Question
+from django.contrib.auth.models import User
+from .models import Choice, Question, Vote
 
 def index(request):
     return HttpResponseRedirect(reverse("polls:index"))

@@ -14,6 +14,7 @@
 {% if user.is_authenticated %}
     <br>
     <input type="submit" value="Vote">
+    <a href="{% url 'polls:results' question.id%}">See results vote</a>
 {% else %}
     <br>
     Please  <a value"login" href="{% url 'login' %}?next={{ request.path }}">login</a> to vote
