@@ -60,8 +60,10 @@ class SeleniumTestCase(LiveServerTestCase):
         self.browser.find_element_by_id("login").click()
         self.browser.get(self.live_server_url + '/polls/')
         self.browser.find_element_by_tag_name('a').click()
-        self.browser.find_element_by_id(f"{self.choice.id}").click()
-        self.browser.find_element_by_id('vote').click()
+        select_vote = self.browser.find_element_by_id(f"{self.choice.id}")
+        select_vote.click()
+        vote = self.browser.find_element_by_id('vote')
+        vote.click()
         self.assertEqual(self.browser.current_url, self.live_server_url + '/polls/' + f'{self.question.id}/results/')
 
 
