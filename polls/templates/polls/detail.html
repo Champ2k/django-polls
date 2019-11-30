@@ -9,11 +9,11 @@
 {% csrf_token %}
 {% for choice in question.choice_set.all %}
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+    <label id="{{ forloop.counter }}" for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
 {% endfor %}
 {% if user.is_authenticated %}
     <br>
-    <input type="submit" value="Vote">
+    <input type="submit" id="vote" value="Vote">
     <a href="{% url 'polls:results' question.id%}">See results vote</a>
 {% else %}
     <br>

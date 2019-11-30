@@ -24,13 +24,3 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
-class Vote(models.Model):
-    """A vote by a user for a particular choice in a Question"""
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    # TODO: how to add a uniqueness constraint on database so there
-    # if only one vote per (User,Question) pair.
-
-# Create your models here.
